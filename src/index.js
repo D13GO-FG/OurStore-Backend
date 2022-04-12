@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const productsRouter = require('./routes/admin');
+const productsRouter = require('./routes/products');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
-app.use('/admin', productsRouter);
+app.use('/', productsRouter);
 
 app.use((error, req, res, next) => {
 	console.error(error.stack);
