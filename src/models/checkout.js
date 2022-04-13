@@ -5,8 +5,11 @@ const ProductSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	count: {
-		type: Number,
+	imageUrl: {
+		type: String,
+	},
+	description: {
+		type: String,
 		required: true,
 	},
 	price: {
