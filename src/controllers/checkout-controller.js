@@ -10,4 +10,14 @@ const saveCheckout = async (req, res, next) => {
 	}
 };
 
-module.exports = { saveCheckout };
+const deleteCheckout = async (req, res, next) => {
+	const { id } = req.params;
+	try {
+		await checkoutService.deleteCheckout(id);
+		res.status(204).send();
+	} catch (error) {
+		next(error);
+	}
+};
+
+module.exports = { saveCheckout, deleteCheckout };

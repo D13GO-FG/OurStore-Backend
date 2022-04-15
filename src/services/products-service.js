@@ -22,7 +22,6 @@ const updateProduct = async (id, product) => {
 	})
 		.lean()
 		.exec();
-	console.log(updatedProduct);
 	return updatedProduct;
 };
 

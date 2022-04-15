@@ -5,13 +5,7 @@ const productsController = require('../controllers/products-controller');
 const checkoutController = require('../controllers/checkout-controller');
 const productsMiddleware = require('../middlewares/products-middleware');
 
-// Controllers
-
-// Middleware
-
-// Router
-
-// main root
+// main root /
 router.get('/', productsController.listProducts);
 // /admin/
 router.post(
@@ -31,5 +25,6 @@ router.delete('/admin/:id', productsController.deleteProduct);
 // /checkout/
 
 router.post('/checkout', checkoutController.saveCheckout);
+router.delete('/checkout/:id', checkoutController.deleteCheckout);
 
 module.exports = router;

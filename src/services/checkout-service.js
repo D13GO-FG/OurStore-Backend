@@ -6,4 +6,8 @@ const saveCheckout = async (checkout) => {
 	return newCheckout;
 };
 
-module.exports = { saveCheckout };
+const deleteCheckout = async (id) => {
+	await Checkout.findByIdAndDelete(id).exec();
+};
+
+module.exports = { saveCheckout, deleteCheckout };
